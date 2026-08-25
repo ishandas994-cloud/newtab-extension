@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "Custom New Tab",
+  "version": "0.1.0",
+  "description": "A custom new tab page with wallpaper, clock, calendar and customization options.",
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  },
+  "permissions": ["storage"],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
