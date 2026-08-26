@@ -3,20 +3,19 @@ import Wallpaper from './components/Wallpaper.jsx'
 import Clock from './components/Clock.jsx'
 import Calendar from './components/Calendar.jsx'
 import SettingsPanel from './components/SettingsPanel.jsx'
+import Draggable from './components/Draggable.jsx'
 import { getStorage, setStorage, DEFAULT_SETTINGS } from './utils/storage.js'
 
 export default function App() {
-  const [settings, setSettings] = useState(null) // null = still loading
+  const [settings, setSettings] = useState(null)
   const [panelOpen, setPanelOpen] = useState(false)
 
-  // Load saved settings once on mount
   useEffect(() => {
     getStorage(Object.keys(DEFAULT_SETTINGS)).then((saved) => {
       setSettings({ ...DEFAULT_SETTINGS, ...saved })
     })
   }, [])
 
-  // Persist whenever settings change (after initial load)
   useEffect(() => {
     if (settings) {
       setStorage(settings)
@@ -39,10 +38,23 @@ export default function App() {
         dim={settings.dim}
       />
 
-      <div className="widgets">
-        {settings.showClock && <Clock format={settings.clockFormat} />}
-        {settings.showCalendar && <Calendar accentColor={settings.accentColor} />}
-      </div>
+      {settings.showClock && (
+        <Draggable
+          position={settings.clockPosition}
+          onPositionChange={(pos) => updateSetting('clockPosition', pos)}
+        >
+          <Clock format={settings.clockFormat} />
+        </Draggable>
+      )}
+
+      {settings.showCalendar && (
+        <Draggable
+          position={settings.calendarPosition}
+          onPositionChange={(pos) => updateSetting('calendarPosition', pos)}
+        >
+          <Calendar accentColor={settings.accentColor} />
+        </Draggable>
+      )}
 
       <button className="settings-toggle" onClick={() => setPanelOpen(true)}>
         ⚙
