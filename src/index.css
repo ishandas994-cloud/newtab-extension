@@ -164,3 +164,77 @@ html, body, #root {
 .search-bar input::placeholder {
   color: #888;
 }
+.frequent-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 4;
+  height: 100%;
+  width: 220px;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(10px);
+  padding: 60px 12px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  overflow-y: auto;
+  transition: transform 0.25s ease;
+}
+
+.frequent-sidebar.closed {
+  transform: translateX(-100%);
+}
+
+.frequent-sidebar.open {
+  transform: translateX(0);
+}
+
+.frequent-site {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.frequent-site:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.frequent-site img {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.frequent-empty {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.85rem;
+  padding: 12px;
+}
+
+.sidebar-toggle {
+  position: fixed;
+  top: 16px;
+  z-index: 5;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: left 0.25s ease;
+}
+
+.sidebar-toggle:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
