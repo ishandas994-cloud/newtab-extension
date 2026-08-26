@@ -1,36 +1,64 @@
-# Custom New Tab Extension
+# 🌐 Custom New Tab Extension
 
-A Chrome new-tab replacement with wallpaper, clock, calendar, and interface customization.
+A fully customizable Chrome new-tab replacement built with React — featuring a personal wallpaper, live clock, calendar, Google search bar, and quick access to your most-visited sites, all rearrangeable to fit how you actually use your browser.
 
-## Features
-- Custom wallpaper (upload your own image)
-- Blur and dim controls for the background
-- Live clock (12h/24h toggle)
-- Mini calendar with month navigation
-- Toggle widgets on/off
-- Accent color picker
-- Settings persist via chrome.storage.local
+![Custom New Tab Screenshot](./screenshot.png)
 
-## Setup
+## ✨ Features
 
-1. Install dependencies:
-   npm install
+- 🖼️ **Custom wallpaper** — upload your own image as the background
+- 🎚️ **Blur & dim controls** — fine-tune the wallpaper so widgets stay readable
+- 🕐 **Live clock** — 12-hour or 24-hour format
+- 📅 **Mini calendar** — navigate months, current day highlighted
+- 🖱️ **Drag-and-drop widgets** — move the clock and calendar anywhere on screen, position is remembered
+- 🔍 **Search bar** — search Google or jump straight to a URL, right from the new tab
+- 📌 **Frequently visited sites** — collapsible vertical sidebar showing your most-visited sites with favicons (powered by Chrome's built-in topSites API)
+- ⚙️ **Settings panel** — toggle widgets on/off, change accent color, adjust everything from one place
+- 💾 **Persistent settings** — everything saves automatically via `chrome.storage.local`
 
-2. Run in dev mode (opens as a normal Vite app for UI iteration):
-   npm run dev
+## 🛠️ Tech Stack
 
-3. Build for Chrome:
-   npm run build
+- [React](https://react.dev/) — UI components
+- [Vite](https://vitejs.dev/) — build tool
+- [@crxjs/vite-plugin](https://crxjs.dev/) — Manifest V3 + Vite integration
+- Chrome Extension APIs: `storage`, `topSites`
 
-4. Load into Chrome:
-   - Go to chrome://extensions
-   - Enable "Developer mode" (top right)
-   - Click "Load unpacked"
-   - Select the `dist/` folder
+## 📦 Installation & Usage
 
-5. Open a new tab — your custom page should load.
+This extension isn't on the Chrome Web Store yet, so it needs to be built and loaded manually — takes about 2 minutes.
 
-## Tech stack
-- React + Vite
-- @crxjs/vite-plugin (Manifest V3 support)
-- chrome.storage.local for persistence
+### 1. Clone the repository
+```bash
+git clone https://github.com/ishandas994-cloud/newtab-extension.git
+cd newtab-extension
+```
+
+### 2. Install dependencies
+```bash
+npm install
+```
+
+### 3. Build the extension
+```bash
+npm run build
+```
+This generates a `dist/` folder containing the packaged extension.
+
+### 4. Load it into Chrome
+1. Open `chrome://extensions` in your browser
+2. Turn on **Developer mode** (toggle in the top-right corner)
+3. Click **Load unpacked**
+4. Select the `dist` folder from this project
+
+### 5. Try it out
+Open a new tab — your custom new tab page should load automatically, replacing Chrome's default.
+
+## 🔄 Making changes / re-testing
+
+After editing any source file:
+```bash
+npm run build
+```
+Then go to `chrome://extensions` and click the reload icon (↻) on the extension's card, and open a new tab to see your changes.
+
+## 📁 Project Structure
