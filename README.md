@@ -62,3 +62,39 @@ npm run build
 Then go to `chrome://extensions` and click the reload icon (↻) on the extension's card, and open a new tab to see your changes.
 
 ## 📁 Project Structure
+newtab-extension/
+├── public/
+│ └── manifest.json # Extension manifest (MV3)
+├── src/
+│ ├── components/
+│ │ ├── Wallpaper.jsx # Background image renderer
+│ │ ├── Clock.jsx # Live clock widget
+│ │ ├── Calendar.jsx # Mini calendar widget
+│ │ ├── SearchBar.jsx # Google search / URL bar
+│ │ ├── FrequentSites.jsx # Sidebar of most-visited sites
+│ │ ├── Draggable.jsx # Drag-and-drop wrapper for widgets
+│ │ └── SettingsPanel.jsx # Settings drawer UI
+│ ├── utils/
+│ │ └── storage.js # chrome.storage wrapper + default settings
+│ ├── App.jsx # Main layout
+│ ├── main.jsx # React entry point
+│ └── index.css # Global styles
+├── index.html
+├── vite.config.js
+└── package.json
+
+## 🚀 Future Improvements
+
+- Wallpaper source from an API (Unsplash/Picsum) for daily rotating backgrounds
+- Quick-links grid for manually pinned sites
+- Publish to the Chrome Web Store for one-click install
+
+## 👤 Author
+
+**Ishan Das**
+- GitHub: [@ishandas994-cloud](https://github.com/ishandas994-cloud)
+- LinkedIn: [ishan-das](https://linkedin.com/in/ishan-das-13765b322)
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
