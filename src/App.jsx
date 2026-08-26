@@ -4,6 +4,7 @@ import Clock from './components/Clock.jsx'
 import Calendar from './components/Calendar.jsx'
 import SettingsPanel from './components/SettingsPanel.jsx'
 import Draggable from './components/Draggable.jsx'
+import SearchBar from './components/SearchBar.jsx'
 import { getStorage, setStorage, DEFAULT_SETTINGS } from './utils/storage.js'
 
 export default function App() {
@@ -37,6 +38,8 @@ export default function App() {
         blur={settings.blur}
         dim={settings.dim}
       />
+
+      <SearchBar />
 
       {settings.showClock && (
         <Draggable
