@@ -46,6 +46,7 @@ export const DEFAULT_SETTINGS = {
   showCalendar: true,
   clockFormat: '24h',
   accentColor: '#7dd3fc',
-  clockPosition: { x: 50, y: 35 },      // percentage-based, so it stays correct on any screen size
-  calendarPosition: { x: 50, y: 60 }
+  clockPosition: { x: 50, y: 20 },
+  calendarPosition: { x: 50, y: 75 },
+  sidebarOpen: true
 }

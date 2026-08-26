@@ -5,6 +5,7 @@ import Calendar from './components/Calendar.jsx'
 import SettingsPanel from './components/SettingsPanel.jsx'
 import Draggable from './components/Draggable.jsx'
 import SearchBar from './components/SearchBar.jsx'
+import FrequentSites from './components/FrequentSites.jsx'
 import { getStorage, setStorage, DEFAULT_SETTINGS } from './utils/storage.js'
 
 export default function App() {
@@ -37,6 +38,11 @@ export default function App() {
         url={settings.wallpaperUrl}
         blur={settings.blur}
         dim={settings.dim}
+      />
+
+      <FrequentSites
+        open={settings.sidebarOpen}
+        onToggle={() => updateSetting('sidebarOpen', !settings.sidebarOpen)}
       />
 
       <SearchBar />
