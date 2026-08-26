@@ -59,3 +59,75 @@ html, body, #root {
 .settings-toggle:hover {
   background: rgba(0, 0, 0, 0.7);
 }
+.settings-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.settings-drawer {
+  width: 300px;
+  height: 100%;
+  background: #1a1a2e;
+  color: #fff;
+  padding: 20px;
+  overflow-y: auto;
+  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.4);
+}
+
+.settings-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.settings-drawer section {
+  margin-bottom: 20px;
+}
+
+.settings-drawer h3 {
+  font-size: 0.9rem;
+  opacity: 0.7;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.upload-btn {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: #7dd3fc;
+  color: #111;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 14px;
+}
+
+.slider-label,
+.toggle-label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.85rem;
+  margin-bottom: 10px;
+}
+
+.toggle-label {
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
