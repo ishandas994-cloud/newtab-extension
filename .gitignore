@@ -1,1 +1,18 @@
-/node_modules
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Editor/OS files
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Logs
+npm-debug.log*
+*.log
+
+# Env files (if you ever add any API keys)
+.env
+.env.local

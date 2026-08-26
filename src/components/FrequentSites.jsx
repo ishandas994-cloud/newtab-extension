@@ -1,3 +1,4 @@
+/* global chrome */
 import React, { useEffect, useState } from 'react'
 
 // Reads Chrome's built-in "most visited sites" list (same data Chrome's
@@ -24,26 +25,19 @@ export default function FrequentSites({ open, onToggle }) {
 
   return (
     <>
-      <button
-        className="sidebar-toggle"
-        onClick={onToggle}
-        style={{ left: open ? '210px' : '10px' }}
-      >
+      <button className="sidebar-toggle" onClick={onToggle} style={{ left: open ? '210px' : '10px' }}>
         {open ? '‹' : '›'}
       </button>
 
       <div className={`frequent-sidebar ${open ? 'open' : 'closed'}`}>
-        {sites.map((site) => (
-          
-            key={site.url}
-            href={site.url}
-            className="frequent-site"
-            title={site.title || site.url}
-          >
-            <img src={faviconFor(site.url)} alt="" />
-            <span>{site.title || site.url}</span>
-          </a>
-        ))}
+        {sites.map((site) => {
+          return (
+            <a key={site.url} href={site.url} className="frequent-site" title={site.title || site.url}>
+              <img src={faviconFor(site.url)} alt="" />
+              <span>{site.title || site.url}</span>
+            </a>
+          )
+        })}
         {sites.length === 0 && (
           <div className="frequent-empty">No frequent sites yet</div>
         )}
